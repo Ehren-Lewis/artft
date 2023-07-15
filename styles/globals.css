@@ -28,3 +28,65 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 3px;
+  /* padding-right: 3px */
+  left: -100px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 1px;
+  background: #84878d;
+  border-radius: 15px;
+}
+
+
+
+.more-items {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: proximity;
+  /* position: relative; */
+}
+
+.more-items li {
+  margin: 5px;
+  width: 200px;
+  height: 8rem;
+  align-items: center;
+}
+/* .nav-wrapper > .nav-anchor {
+  text-decoration: none;
+  background-size: 0% 100%;
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  transition: all .4s ease-in-out;
+  color: white;
+} */
+
+/* .nav-wrapper > .nav-anchor:hover {
+  cursor: pointer;
+  z-index: 1;
+  color: black;
+  background-size: 100% 100%;
+} */
+
+.nav-anchor::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width .4s ease-in;          
+}
+
+.nav-anchor:hover::after {
+  width: 100%;
+}
+.nav-anchor:hover, .nav-icon:hover {
+  color: #ced1d7;
+  transition: .4s;
+}
