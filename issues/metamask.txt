@@ -1,0 +1,25 @@
+I've been working on implementing the metamask SDK.
+
+My first issue was one with legacy octal esacpes being illegal in strict mode, but in no such instance
+am I using a strict mode. The next issue has to do with client vs server rendering and file information with react-dom vs next
+
+Files are defaulted to server side unless specified with the 'use client' at the top of the file to indicate server side rendering.
+You cannot use async / await on client side, but for metamask SDK, to request the account, you must use async / await.
+To get the ethereum information in the first place, it is stored in window.ethereum. The window object is only available on the client side.
+
+The issue then becomes rendering the client side code on the server side, but this results in a hydration error because of react-dom.
+
+The fixes are:
+    1. MetaMaskSDK has this code:
+        sdk = new MetaMaskSDK(options);
+        const ethereum =  sdk.getProvider();
+        ethereum.request( "the account request)  (this is where async await is being used, but I shall attempt it without it as well)
+
+    The fix is getting this code to work. Every time I try, I get an error with the provider, saying no provider was provided. I
+    am currently looking at the API docs for a fix, but in the meantime I've been trying some other implications by doing ethereum = window.ethereum
+
+    2. Fix the hydation issue caused by the rendering
+        This is fixed by using useEffect on the code and running a section of code on launch. On first attempt, I still ryn into the hydration issue, but I am not done testing it.
+        I feel it has to do with how I set up set state and use state in useclientwallet.js
+
+I will continue to work on the fixes, but I want to push the code to get something up in the meantime. This is if you happen to stumble across any errors during the pull
