@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         'black-850': '#010101',
+        'coral': '#F4A261',
       },
     },
   },
