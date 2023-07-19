@@ -20,7 +20,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  color: #fbfbfb;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -89,4 +90,22 @@ body {
 .nav-anchor:hover, .nav-icon:hover {
   color: #ced1d7;
   transition: .4s;
+}
+
+
+.card-style {
+
+  transition: .4s ease-in;
+}
+
+.card-style:hover {
+
+  transform: translateY(-3px);
+
+}
+
+.card-information {
+  display: inline-block;
+  display: flex;
+  justify-content: space-around;
 }
