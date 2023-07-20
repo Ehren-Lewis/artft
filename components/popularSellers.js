@@ -1,6 +1,7 @@
 'use client'
 
-import Link from "next/link"
+import Link from "next/link";
+
 
 // This home page will render some of the given art nft informattion that is available
 
@@ -13,7 +14,6 @@ const PopularSell = () => {
     for (let i = 0; i < 12; i++ ) {
         data.push({item: `item${i}`, price: i + 1, productId: i})
     }
-
 
 
     return (
