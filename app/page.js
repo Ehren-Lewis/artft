@@ -1,8 +1,8 @@
 
-import PopularSell from '@/components/popularSellers'
+import Collection from '@/components/collections'
 import MoreSellers from '@/components/moreSellers';
 import Headliner from '@/components/headliner';
-import Wallet from '@/components/wallet';
+import EthereumButton from '@/components/ethbutton';
 // import ethereumVar from '@/metamask/main';
 
 
@@ -28,8 +28,9 @@ export default function Home() {
       </div>
           
           <div className='container mx-auto'>
-          <PopularSell />
+          <Collection />
           <MoreSellers />
+          <EthereumButton />
         </div>
     </main>
   )

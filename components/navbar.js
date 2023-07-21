@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { faMagnifyingGlass, faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import EthereumButton from "./ethbutton";
 
 import SearchBar from "./searchbar";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="columns-3 flex justify-around items-center p-10 bg-black-850 nav-wrapper">
+        <nav className="columns-3 flex justify-around items-center p-10 bg-black shadow-lg nav-wrapper">
             <Link href="/" className="">ArtFT</Link>
             <Link href="/account"><FontAwesomeIcon icon={faUser} className="h-6 w-6 nav-icon"/></Link>
             <Link href="/sell" className="nav-anchor">Sell</Link>
