@@ -9,3 +9,6 @@ const MMSDK = new MetaMaskSDK();
 const ethereumVar = MMSDK.getProvider();
 
 export default ethereumVar;
+
+
+// DEPRECATED
