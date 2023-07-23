@@ -23,6 +23,8 @@
 .DS_Store
 *.pem
 
+/dbdiagram
+
 # debug
 npm-debug.log*
 yarn-debug.log*
