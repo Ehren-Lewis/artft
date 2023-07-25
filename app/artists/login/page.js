@@ -7,6 +7,7 @@ import EthereumButton from "@/components/ethbutton";
 import pocketDB from "@/pocketbase/connection";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 
 const ArtistLogin = () => {
@@ -32,8 +33,7 @@ const ArtistLogin = () => {
             `${formValues.password}`,
         );
 
-        console.log(pocketDB.authStore.isValid)
-
+        // useRouter().push("/home")
     }
     
 

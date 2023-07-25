@@ -1,16 +1,24 @@
 'use client'
 
 import { useState } from "react";
+import { useRouter,usePathname } from "next/navigation";
 
 import verifyProvider from "@/metamask/verifyProvider";
 
 const EthereumButton = () => {
+    const router = useRouter();
+    const path = usePathname();
+
+    const handleUserRoute = path.split("/")[1]
 
 
     const correctProvider = verifyProvider();
     const [currentAccount, setCurrentAccount] = useState()
 
-    const connectAccount = async () => {
+
+    const connectAccount = async (e) => {
+
+        e.preventDefault();
 
         const accounts = await window.ethereum.request({method: "eth_requestAccounts"})
          .catch( (err => {
@@ -21,6 +29,15 @@ const EthereumButton = () => {
          }))
 
          setCurrentAccount(accounts[0])
+
+         localStorage.setItem("account", currentAccount)
+
+        handleUserRoute == "artists" ? router.push("/artists/home") : router.push("/users/home")
+
+
+
+
+
 
         // console.log('in here')
         // if (currentAccount) {
@@ -57,7 +74,7 @@ const EthereumButton = () => {
                 
                 { currentAccount != null ? 
                 <button className="bg-slate-900">Logged In</button> : 
-                <button className="py-2 px-4 bg-slate-900 rounded" onClick={connectAccount}>Access The Eth</button>
+                <button className="py-2 px-4 bg-slate-900 rounded" onClick={(e) => connectAccount(e)}>Access The Eth</button>
                  }
 
             </div>
