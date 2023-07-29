@@ -4,17 +4,6 @@ import { useSearchParams} from 'next/navigation';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-// w-full p-3 bg-slate-950 rounded-full
-
-
-{/* <form id="search" className="w-1/2">
-<SearchBar id="searchBox" class="w-full p-3 bg-slate-950 rounded-full" />
-
-</form> */}
-
-{/* <FontAwesomeIcon icon={faMagnifyingGlass} className="h-6 w-6" style={{color: "#fff"}} /> */}
-
-
 const SearchBar = (props) => {
 
     const [search, setSearch] = useState("")
