@@ -4,8 +4,6 @@ import Link from "next/link"
 
 // This home page will render some of the given art nft informattion that is available
 
-
-
 const MoreSellers = () => {
     // popular sell represents the top line of products available, like at any ecommerce website
 
@@ -17,8 +15,6 @@ const MoreSellers = () => {
 
 
     return (
-
-        // <div className="popular-items columns-3 flex justify-around w-full">
         <div>
 
             <h2 className="mt-10 text-light text-4xl underline underline-offset-10"> More Sellers</h2>

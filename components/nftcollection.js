@@ -4,7 +4,6 @@ import { NftProvider } from "use-nft";
 
 // import getCollectionsByWallet from "@/utils/infurehandler";
 
-
 const NftCollection = () => {
 
     return (

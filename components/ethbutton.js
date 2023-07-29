@@ -34,37 +34,6 @@ const EthereumButton = () => {
 
         handleUserRoute == "artists" ? router.push("/artists/home") : router.push("/users/home")
 
-
-
-
-
-
-        // console.log('in here')
-        // if (currentAccount) {
-
-        //     console.log('in here current account is true')
-
-        //     setCurrentAccount(accounts[0])
-        //     console.log(currentAccount)
-        //     return;
-
-        // }
-        // if (!correctProvider) {
-        //     console.error("The provider is not the same, do you have multiple wallets?")
-        //     return;
-        //  }
-
-        //  console.log("Provider verified: ", window.ethereum)
-
-        //  const accounts = await window.ethereum.request({method: "eth_requestAccounts"})
-        //  .catch( (err => {
-        //         if (err == -32002) {
-        //             console.log("Please finish connecting your account")
-        //             return;
-        //         }
-        //  }))
-
-
     } 
 
     return (

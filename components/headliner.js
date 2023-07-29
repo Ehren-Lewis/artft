@@ -12,7 +12,6 @@ const Headliner = () => {
     }
 
     return (
-
         <div className="mx-auto px-2" style={backgroundStyle}>
             <div className="container mx-auto flex place-self-center ">
             <p className="text-5xl font-medium" style={{letterSpacing: ".3rem", height: "inherit"}}>Sovrn</p>
