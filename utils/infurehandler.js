@@ -22,4 +22,17 @@ const getCollectionsByWallet = async (walletAddress) => {
     return res;
 }
 
-export default getCollectionsByWallet
+
+sdk.api.getNFTs({
+  publicAddress: process.env.WALLET_PRIVATE_KEY,
+  includeMetadata: true
+}).then(res => {
+  for ( let i = 0; i < res.assets.length; i++) {
+        res.assets[i].metadata ? console.log(res.assets[i].metadata) : ""
+  }
+})
+
+// getCollectionsByWallet("0x3BA0f9D0D608D08dC2F023071d33B0d5dAB61A64").then( data => {
+//   console.log(data)
+// })
+// export default getCollectionsByWallet
