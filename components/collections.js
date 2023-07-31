@@ -23,13 +23,14 @@ const Collection =  () => {
 
         // <div className="popular-items columns-3 flex justify-around w-full">
         <div>
-            <h2 className="mt-10 text-6xl underline decoration-2 text-center mb-10" style={{color: " #2A9D8F "}}>Collection</h2>
+            <h2 className="mt-10 text-6xl underline decoration-2 text-center mb-10" style={{color: " #2A9D8F "}}>Collections</h2>
 
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-7 justify-items-center">
             {
                 pocketDbData ? pocketDbData.map( element => {
                     return (
 
+                        // Price will have to be updated dynamically based on what the actual privce is
                         <Card key={element.id}
                             id={element.id}
                             price={element.price}
