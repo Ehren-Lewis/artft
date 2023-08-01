@@ -33,6 +33,7 @@ const Collection =  () => {
                         // Price will have to be updated dynamically based on what the actual privce is
                         <Card key={element.id}
                             id={element.id}
+                            title={element.collectiontitle}
                             price={element.price}
                             artist={element.artist}
                             img={pocketDB.files.getUrl(element, element.imageref[0])}

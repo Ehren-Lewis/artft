@@ -15,24 +15,32 @@ const sdk = new SDK(auth);
 const getCollectionsByWallet = async (walletAddress) => {
 
     const res = await sdk.api.getCollectionsByWallet({
-        walletAddress: walletAddress
+        walletAddress: walletAddress,
     })
 
     // return type is metadata
-    return res;
+    console.log(res)
 }
 
+const getNFTs = async (publicAddress) => {
+  sdk.api.getNFTs({
+    publicAddress: publicAddress ?? process.env.WALLET_PRIVATE_KEY,
+    includeMetadata: true
+  }).then(res => {
+    for ( let i = 0; i < res.assets.length; i++) {
+          res.assets[i].metadata ? console.log(res.assets[i].metadata) : ""
+    }
+    console.log(res)
+  })
+}
 
-sdk.api.getNFTs({
-  publicAddress: process.env.WALLET_PRIVATE_KEY,
-  includeMetadata: true
-}).then(res => {
-  for ( let i = 0; i < res.assets.length; i++) {
-        res.assets[i].metadata ? console.log(res.assets[i].metadata) : ""
-  }
-})
+// getNFTs("0xB7618A3E0AFAE4BB2f783849F4738D278DE9D13d");
+
+getCollectionsByWallet("0xB7618A3E0AFAE4BB2f783849F4738D278DE9D13d")
 
 // getCollectionsByWallet("0x3BA0f9D0D608D08dC2F023071d33B0d5dAB61A64").then( data => {
 //   console.log(data)
 // })
 // export default getCollectionsByWallet
+
+export { getCollectionsByWallet, getNFTs}
