@@ -1,36 +1,19 @@
 {
   "name": "artft",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "main": "server/serverjs",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && node server.js \" \"cd client && npm run dev\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@infura/sdk": "^2.4.3",
-    "@metamask/detect-provider": "^2.0.0",
-    "@metamask/sdk": "^0.5.2",
-    "autoprefixer": "10.4.14",
+    "apollo-server-express": "^3.12.0",
+    "concurrently": "^8.2.0",
     "dotenv": "^16.3.1",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "ethers": "^5.7.2",
-    "fs": "^0.0.1-security",
-    "list-files": "^1.1.4",
-    "list-react-files": "^0.2.0",
-    "next": "13.4.10",
-    "path": "^0.12.7",
-    "pocketbase": "^0.15.3",
-    "postcss": "8.4.26",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "use-nft": "^0.12.0"
+    "express": "^4.18.2",
+    "graphql": "^16.7.1",
+    "mongoose": "^7.4.1",
+    "path": "^0.12.7"
   }
 }
