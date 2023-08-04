@@ -22,17 +22,20 @@ const getCollectionsByWallet = async (walletAddress) => {
     console.log(res)
 }
 
-// const getNFTs = async (publicAddress) => {
-//   sdk.api.getNFTs({
-//     publicAddress: publicAddress ?? process.env.WALLET_PRIVATE_KEY,
-//     includeMetadata: true
-//   }).then(res => {
-//     for ( let i = 0; i < res.assets.length; i++) {
-//           res.assets[i].metadata ? console.log(res.assets[i].metadata) : ""
-//     }
-//     console.log(res)
-//   })
-// }
+const getNFTs = async (publicAddress) => {
+  sdk.api.getNFTs({
+    publicAddress: publicAddress ?? process.env.WALLET_PRIVATE_KEY,
+    includeMetadata: true
+  }).then(res => {
+    const network = res.network;
+    const account = res.account;
+    const assets = res.assets;
+
+    console.log( network, account, assets)
+
+    return { network, account, assets}
+  })
+}
 
 const getNFTsTest = async (publicAddress) => {
     sdk.api.getNFTs({
@@ -42,7 +45,9 @@ const getNFTsTest = async (publicAddress) => {
         const account = res.account;
         const network = res.network;
 
-        console.log(res)
+        // console.log(res)
+
+        console.log(res.assets[0].metadata.artistRoyaltyInfo)
 
         const currentAsset = res.assets[3]
 
@@ -50,7 +55,7 @@ const getNFTsTest = async (publicAddress) => {
 
         // for ( let i = 0; i < dskjhf)
         const currentAssetMetadata = currentAsset.metadata;
-        console.log(currentAssetMetadata)
+        // console.log(currentAssetMetadata)
 
       const { description, artist_website, image,
         artistRoyaltyInfo:{artistAddress, artistPercentage }, name} = currentAssetMetadata;
@@ -58,9 +63,9 @@ const getNFTsTest = async (publicAddress) => {
     //   console.log(description, artist_website, image, artistAddress, artistPercentage)
   })}
 
-// getNFTsTest("0xB7618A3E0AFAE4BB2f783849F4738D278DE9D13d");
+getNFTs("0xB7618A3E0AFAE4BB2f783849F4738D278DE9D13d");
 
-getCollectionsByWallet("0xB7618A3E0AFAE4BB2f783849F4738D278DE9D13d")
+// getCollectionsByWallet("0xB7618A3E0AFAE4BB2f783849F4738D278DE9D13d")
 
 
 const handleNftCollections = async (contractAddress) => {

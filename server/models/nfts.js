@@ -14,6 +14,10 @@ const nftSchema = new Schema({
         trim: true
     },
 
+    // network : {
+    //     type: String
+    // },
+
     tokenId: {
         type: String,
         required: true,
@@ -52,4 +56,21 @@ const nftSchema = new Schema({
         type: String,
         },
 
-})
+    name: {
+        type: String
+    },
+
+    status: {
+        type: String
+    },
+
+    accountOwner: {
+        type: String
+    }
+
+});
+
+
+const NFTs = model("nfts", nftSchema);
+
+module.exports = NFTs

@@ -7,6 +7,8 @@ const db = require("./config/connection");
 
 const { typeDefs, resolvers } = require("./schemas");
 
+const {startServerAndCreateNextHandler } = require("@as-integrations/next")
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -19,9 +21,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
@@ -37,4 +39,5 @@ const startApolloServer = async (typeDefs, resolvers) => {
   });
 };
 
-startApolloServer(typeDefs, resolvers);
+
+startServerAndCreateNextHandler(startApolloServer(typeDefs, resolvers))
