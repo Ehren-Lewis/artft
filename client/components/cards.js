@@ -7,7 +7,7 @@ const Card = ({img, price, artist, id, title}) => {
 
         <div className="shadow-lg border rounded max-w-sm h-min shadow-slate-50/20 card-style">
             <div className="">
-                <Link href={{pathname: `/collection/${id}`, query: {contractadd: id}}}>
+                <Link href={{pathname: `/collections/${id}`, query: {contractadd: id}}}>
                 <p className="text-center border-b">{title ? title :  "Collection Title"}</p>
                     <img className="w-full" src={img} alt="NFT FROG" />
                 </Link>
